@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFO 2 - Sistema de Gestión de Tareas</title>
+  <style>
+    :root { --teal: #0f766e; --ink: #1f2937; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0; color: var(--ink); line-height: 1.6;
+      background: #f8fafc;
+    }
+    main { max-width: 800px; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { color: var(--teal); }
+    code { background: #e2e8f0; padding: 0.1rem 0.35rem; border-radius: 4px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.4rem 0.6rem; text-align: left; }
+    th { background: #f1f5f9; }
+    a { color: var(--teal); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>PFO 2 - Sistema de Gestión de Tareas con API y Base de Datos</h1>
+    <p>Práctica Formativa Obligatoria 2 de <strong>Programación sobre Redes</strong> (IFTS29, 2° cuatrimestre 2026).</p>
+
+    <h2>Endpoints de la API</h2>
+    <table>
+      <tr><th>Método</th><th>Ruta</th><th>Descripción</th></tr>
+      <tr><td>POST</td><td><code>/registro</code></td><td>Registra usuarios con contraseña hasheada</td></tr>
+      <tr><td>POST</td><td><code>/login</code></td><td>Verifica credenciales y permite el acceso</td></tr>
+      <tr><td>GET</td><td><code>/tareas</code></td><td>Acceso a tareas (HTML de bienvenida)</td></tr>
+    </table>
+
+    <h2>Código fuente</h2>
+    <p>Servidor Flask + SQLite y cliente de consola en <a href="https://github.com/hleopary/pfo2-api-tareas">hleopary/pfo2-api-tareas</a>.</p>
+
+    <h2>Ejecución local</h2>
+    <pre><code>python3 servidor.py   # inicia la API en http://127.0.0.1:5000
+python3 cliente.py    # cliente de consola</code></pre>
+
+    <h2>Respuestas conceptuales (extracto)</h2>
+    <ul>
+      <li><strong>¿Por qué hashear contraseñas?</strong> Para no exponerlas en texto plano ante una filtración; el hash es irreversible, con sal por usuario y costoso de revertir.</li>
+      <li><strong>¿Ventajas de SQLite?</strong> Base embebida (un archivo), sin servidor/configuración, módulo <code>sqlite3</code> estándar de Python, transacciones ACID y portabilidad.</li>
+    </ul>
+
+    <p><a href="README.md">Documentación completa →</a></p>
+  </main>
+</body>
+</html>
