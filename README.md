@@ -61,6 +61,11 @@ curl http://127.0.0.1:5000/tareas
 
 ## Pruebas realizadas (04/10/2026)
 
+![Log del servidor](capturas/01_log%20servidor.png)
+![Pruebas con curl](capturas/02_pruebas%20curl.png)
+![Cliente de consola](capturas/03_cliente%20consola.png)
+![Hash verificado](capturas/04_hash%20verificado.png)
+
 | Caso | Comando | Resultado |
 |------|---------|-----------|
 | Registro OK | `POST /registro {"usuario":"leo","contraseña":"1234"}` | `{"mensaje":"Usuario registrado correctamente."}` (HTTP 201) |
